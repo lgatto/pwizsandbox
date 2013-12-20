@@ -28,6 +28,9 @@ text). [`mz5`](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3270111/)
 uses the HDF5 format; not sure if the data inside is `zlib`
 compressed.
 
+I had issues to push the relatively big data files to github. Instead, 
+I have provided links.
+
 ## Example codes
 
 If any of the below is not clear and it seems to be essential to
