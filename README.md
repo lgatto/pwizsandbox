@@ -10,7 +10,7 @@ these later).
 
 Write support to any other raw data format would also be of interest. 
 
-* data
+## data
 
 Example data files. The most important file format is
 [`mzML`](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3013463/) and
@@ -28,7 +28,7 @@ text). [`mz5`](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3270111/)
 uses the HDF5 format; not sure if the data inside is `zlib`
 compressed.
 
-* Example codes
+## Example codes
 
 If any of the below is not clear and it seems to be essential to
 understand the mass spectrometry details to make progress from a
@@ -84,7 +84,7 @@ precursorIntensity       8771486.0000
   time in `R`). I believe it is possible to directly extract such
   chromatograms from `mzML`.
 
-* Ontology terms
+## Ontology terms
 
 You will see many `MS:0000000` terms in the data files. These
 represent ontology terms (linked curated vocabulary). At this point,
