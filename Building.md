@@ -6,9 +6,9 @@ For details, see
 - https://svn.code.sf.net/p/proteowizard/code/trunk/pwiz/doc/docs.html
 
 1) Install dependencies. On linux 
-- (Boost)[http://boost.org]:  `sudo apt-get install libboost1.53-all-dev`
-- (gd)[http://www.libgd.org]: `sudo apt-get install libgd2-xpm-dev` (possible optional)
-- (fftw)[http://www.fftw.org]: `sudo apt-get install libfftw3-dev`
+- [Boost](http://boost.org):  `sudo apt-get install libboost1.53-all-dev`
+- [gd](http://www.libgd.org): `sudo apt-get install libgd2-xpm-dev` (possible optional)
+- [fftw](http://www.fftw.org): `sudo apt-get install libfftw3-dev`
 
 2) Get the data `svn checkout https://proteowizard.svn.sourceforge.net/svnroot/proteowizard/trunk/pwiz <pwiz-root>`
 
