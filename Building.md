@@ -14,5 +14,14 @@ For details, see
 
 3) Build with `quickbuild.sh`
 
+4) Get some example code
 
+``` sh
+mkdir hello_pwiz
+cp doc/technical/hello_pwiz/hello_pwiz.cpp hello_pwiz
+cp doc/technical/hello_pwiz/Jamfile.jam hello_pwiz
+```
 
+5) Build example code `quickbuild.sh hello_pwiz`
+
+6) Test example code `hello_pwiz/hello_pwiz example_data/tiny.pwiz.1.1.mzML`
