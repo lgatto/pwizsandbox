@@ -10,6 +10,8 @@ these later).
 
 Write support to any other raw data format would also be of interest. 
 
+See also the [mzR wiki](https://github.com/sneumann/mzR/wiki).
+
 ## data
 
 Example data files. The most important file format is
