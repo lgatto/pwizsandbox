@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
     }
 
     else {
-      cout << "Specify input mzML file" << endl;
+      cout << "Specify input mzid file" << endl;
     }
 
   } catch (exception& e) {
