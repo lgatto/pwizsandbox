@@ -1,5 +1,5 @@
 /*
- * mgf-read-test.cpp
+ * mgf-test.cpp
  *
  *  Created on: Mar 27, 2014
  *
@@ -46,7 +46,14 @@ int main(int argc, char* argv[]) {
       UserParam("doobie", "420"));
 
   SpectrumListPtr sl = SpectrumList_MGF::create(is, msDataTest);
-  IndexList list = sl->findSpotID("55.1001.1001.3.dta");
+  cout << sl->size() << endl;
+
+  IndexList list = sl->findSpotID("55.1008.1013.1.dta");
   cout << list.size() << endl;
+  SpectrumPtr s = sl->spectrum(list[0], true);
+  cout << s->cvParam(MS_ms_level).valueAs<int>() << endl;
+  cout << s->defaultArrayLength << endl;
+  cout << s->sourceFilePosition << endl;
+
 }
 
