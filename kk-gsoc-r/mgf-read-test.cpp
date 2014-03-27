@@ -48,12 +48,20 @@ int main(int argc, char* argv[]) {
   SpectrumListPtr sl = SpectrumList_MGF::create(is, msDataTest);
   cout << sl->size() << endl;
 
-  IndexList list = sl->findSpotID("55.1008.1013.1.dta");
+  IndexList list = sl->findSpotID("55.651.651.4.dta");
   cout << list.size() << endl;
   SpectrumPtr s = sl->spectrum(list[0], true);
   cout << s->cvParam(MS_ms_level).valueAs<int>() << endl;
   cout << s->defaultArrayLength << endl;
   cout << s->sourceFilePosition << endl;
+  cout << s->cvParam(MS_base_peak_m_z).valueAs<double>() << endl;
+  cout << s->cvParam(MS_base_peak_intensity).valueAs<double>() << endl;
+  cout
+      << s->precursors[0].selectedIons[0].cvParam(MS_selected_ion_m_z)
+          .valueAs<double>()
+      << endl;
 
+  cout << s->precursors[0].selectedIons[0].cvParam(MS_charge_state).value
+       << endl;
 }
 
