@@ -21,47 +21,69 @@ using namespace pwiz::msdata;
 using namespace pwiz::util;
 using namespace pwiz::minimxml;
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
 
-  ifstream file("55merge.mgf");
-  file.seekg(0, file.end);
-  int length = file.tellg();
-  file.seekg(0, file.beg);
+    try
+    {
+        if (argc == 2)
+        {
+            ifstream file("55merge.mgf");
+            file.seekg(0, file.end);
+            int length = file.tellg();
+            file.seekg(0, file.beg);
 
-  char * buffer = new char[length];
+            char * buffer = new char[length];
 
-  file.read(buffer, length);
+            file.read(buffer, length);
 
-  shared_ptr<istream> is(new istringstream(buffer));
+            shared_ptr<istream> is(new istringstream(buffer));
 
-  MSData msDataTest;
+            MSData msDataTest;
 
-  msDataTest.instrumentConfigurationPtrs.push_back(
-      InstrumentConfigurationPtr(new InstrumentConfiguration("LCQDeca")));
+            msDataTest.instrumentConfigurationPtrs.push_back(
+                InstrumentConfigurationPtr(new InstrumentConfiguration("LCQDeca")));
 
-  msDataTest.instrumentConfigurationPtrs.back()->cvParams.push_back(
-      MS_LCQ_Deca);
+            msDataTest.instrumentConfigurationPtrs.back()->cvParams.push_back(
+                MS_LCQ_Deca);
 
-  msDataTest.instrumentConfigurationPtrs.back()->userParams.push_back(
-      UserParam("doobie", "420"));
+            msDataTest.instrumentConfigurationPtrs.back()->userParams.push_back(
+                UserParam("doobie", "420"));
 
-  SpectrumListPtr sl = SpectrumList_MGF::create(is, msDataTest);
-  cout << sl->size() << endl;
+            SpectrumListPtr sl = SpectrumList_MGF::create(is, msDataTest);
+            cout << sl->size() << endl;
 
-  IndexList list = sl->findSpotID("55.651.651.4.dta");
-  cout << list.size() << endl;
-  SpectrumPtr s = sl->spectrum(list[0], true);
-  cout << s->cvParam(MS_ms_level).valueAs<int>() << endl;
-  cout << s->defaultArrayLength << endl;
-  cout << s->sourceFilePosition << endl;
-  cout << s->cvParam(MS_base_peak_m_z).valueAs<double>() << endl;
-  cout << s->cvParam(MS_base_peak_intensity).valueAs<double>() << endl;
-  cout
-      << s->precursors[0].selectedIons[0].cvParam(MS_selected_ion_m_z)
-          .valueAs<double>()
-      << endl;
+            IndexList list = sl->findSpotID("55.651.651.4.dta");
+            cout << list.size() << endl;
+            SpectrumPtr s = sl->spectrum(list[0], true);
+            cout << s->cvParam(MS_ms_level).valueAs<int>() << endl;
+            cout << s->defaultArrayLength << endl;
+            cout << s->sourceFilePosition << endl;
+            cout << s->cvParam(MS_base_peak_m_z).valueAs<double>() << endl;
+            cout << s->cvParam(MS_base_peak_intensity).valueAs<double>() << endl;
+            cout
+                    << s->precursors[0].selectedIons[0].cvParam(MS_selected_ion_m_z)
+                    .valueAs<double>()
+                    << endl;
 
-  cout << s->precursors[0].selectedIons[0].cvParam(MS_charge_state).value
-       << endl;
+            cout << s->precursors[0].selectedIons[0].cvParam(MS_charge_state).value
+                 << endl;
+
+        }
+
+        else
+        {
+            cout << "Specify input mzid file" << endl;
+        }
+
+    }
+    catch (exception& e)
+    {
+        cout << e.what() << endl;
+    }
+    catch (...)
+    {
+        cout << "Unknown exception." << endl;
+    }
+
 }
-
