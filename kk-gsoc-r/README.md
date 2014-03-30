@@ -1,4 +1,4 @@
-Some simple code for reading `MGF` and `mzIdentML` format using [ProteoWizard](http://proteowizard.sourceforge.net/).
+Some simple code for reading `MGF`, `mzIdentML` and `mzML` format using [ProteoWizard](http://proteowizard.sourceforge.net/).
 
 You can get example files from the links below:
 * [mzIdentML](https://www.dropbox.com/s/1i19nf6nb8ufyl3/55merge_mascot_full.mzid)
