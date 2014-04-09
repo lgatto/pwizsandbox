@@ -56,17 +56,17 @@ Mentor link_ids: lgatto, sneumann
 
 # CODING PLAN & METHODS
 
-## Describe perceived obstacles
+## Perceived obstacles
 
 The main obstacle in this project is to use an R reference class as an interface to the C++ implementation using Rcpp modules. There is already such an interface using Rcpp modules to the Ramp infrastructure. While simpler than proteowizard, it should prove a helpful template to get started.
 
-Describe the critical objectives.
+## Critical objectives.
 
 First, extending mzR on raw data and meta-data accession using the proteowizard "msdata" object type. To be more specific, the reading part in mzR has been implemented using the older Ramp code. So one of our objectives is to provide support XML-based formats function using the proteowizard code base.
 
 Second, implementing support mzIdentML format by using the "identdata" from proteowizard.
 
-Describe methods of evaluating success or problems as coding progresses.
+## Methods of evaluating success or problems as coding progresses.
 
 Since I am working in a mass spectra lab, I have enough data for my testing. Also, we have Java library and C++ library with similar functions, so the results of mzR can be tested. 
 
@@ -82,7 +82,7 @@ Then I will implement the reading and writing support for mzIdentML format after
 
 I have travel plan to China, so I will adjust the plan a little.
 
-*21 April - 30 April*: document reading, getting familiar with Reference class and Rcpp module in package development. The existing backend mzRramp in mzR will be used as the main study material.
+*21 April-30 April*: document reading, getting familiar with Reference class and Rcpp module in package development. The existing backend mzRramp in mzR will be used as the main study material.
 
 *1 May-7 May*: I have finals during the time, so I have to focus on the exams.
 
